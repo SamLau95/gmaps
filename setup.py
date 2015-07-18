@@ -9,7 +9,7 @@ version = gmaps.__version__
 
 long_description = """
 
-gmaps
+gmaps (forked for Python 3)
 =====
 
 gmaps is a plugin for including interactive Google maps in the IPython Notebook.
@@ -21,33 +21,20 @@ Let's plot a heatmap of taxi pickups in San Francisco:
     In [1]: import gmaps
 
     # load a Numpy array of (latitude, longitude) pairs
-    In [2]: data = gmaps.datasets.load_dataset('taxi_rides') 
-            
+    In [2]: data = gmaps.datasets.load_dataset('taxi_rides')
+
     In [3]: map = gmaps.heatmap(data)
             gmaps.display(map)
 
 Installation
 ------------
 
-Using pip or easy_install
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The easiest way to install `gmaps` is with pip::
-
-    $ pip install gmaps
-
-or, if you don't have pip,::
-
-    $ easy_install gmaps
-
-You may need to run these commands as root if you are using the system wide Python installation.
-
 Development version
 ^^^^^^^^^^^^^^^^^^^
 
-The development version can be installed by cloning the git repository by running::
+The development version can be installed by cloning the git repository:
 
-    $ git clone https://github.com/pbugnion/gmaps.git
+    $ git clone https://github.com/samlau95/gmaps.git
 
 Change to the project's root directory and run::
 
@@ -106,7 +93,7 @@ def write_readme():
     """
     with open("README.rst","w") as f:
         f.write("""\
-.. Automatically generated from LONG_DESCRIPTION keyword in 
+.. Automatically generated from LONG_DESCRIPTION keyword in
 .. setup.py. Do not edit directly.\
 """)
         f.write(long_description.replace(".. code:: python","::"))
@@ -131,6 +118,6 @@ if __name__ == "__main__":
           package_dir={"gmaps.datasets" : "gmaps/datasets" },
           package_data={"gmaps.datasets": ["metadata.yaml","data/*.csv"]},
           url=r"https://github.com/pbugnion/gmaps",
-          license="BSD License", 
+          license="BSD License",
           platforms=["Linux", "Mac OS", "Windows"]
     )
